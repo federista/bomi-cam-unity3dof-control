@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+
+  bomi_server:
+    build:
+      context: ./bomi_fama_nodejs
+      dockerfile: Dockerfile.dockerfile
+    #image: hypothe/node_bomi_fama:test
+    networks:
+      - bomi-fama
+    ports:
+      - "8080:4242"
+    entrypoint: ["npm", "start"]
+    
+
+  bomi_pyclient:
+    build:
+      context: ./markerlessBoMI_FaMa
+      dockerfile: Dockerfile.dockerfile
+    #image: hypothe/bomi_fama:test-server
+    environment:
+      - BOMI_SERVER_NAME=bomi_server # used by the test_socket script
+    networks:
+      - bomi-fama
+    ports:
+      - "8081:4242"
+    entrypoint: ["python", "test_socket.py"]
+    depends_on:
+      - bomi_server
+
+networks:
+  bomi-fama: {}
