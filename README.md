@@ -13,3 +13,5 @@ Once you have `docker-compose` installed you will just have to run the compose f
 ```bash
 .../biorob_group12_bomi$ docker-compose up
 ```
+
+This will launch the dockerfiles
