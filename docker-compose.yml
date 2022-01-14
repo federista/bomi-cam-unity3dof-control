@@ -21,13 +21,26 @@ services:
     #image: hypothe/bomi_fama:test-server
     environment:
       - BOMI_SERVER_NAME=bomi_server # used by the test_socket script
+      - DISPLAY
+      - XDG_RUNTIME_DIR
+      - QT_X11_NO_MITSHM=1"
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      #- /dev/video0:/dev/video0
+    privileged: true
     networks:
       - bomi-fama
     ports:
       - "8081:4242"
-    entrypoint: ["python", "test_socket.py"]
+    entrypoint: ["python", "main_mechanism.py"]
     depends_on:
       - bomi_server
+    deploy:
+      resources:
+        reservations: 
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
 
 networks:
   bomi-fama: {}
