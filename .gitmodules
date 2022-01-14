@@ -5,4 +5,4 @@
 [submodule "bomi_fama_nodejs"]
 	path = bomi_fama_nodejs
 	url = https://github.com/hypothe/bomi_fama_nodejs.git
-	branch = test
+	branch = main
