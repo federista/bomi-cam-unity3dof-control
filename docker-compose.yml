@@ -7,6 +7,7 @@ services:
       context: ./bomi_fama_nodejs
       dockerfile: Dockerfile.dockerfile
     #image: hypothe/node_bomi_fama:test
+    #network_mode: "host"
     networks:
       - bomi-fama
     ports:
@@ -28,8 +29,10 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
       #- /dev/video0:/dev/video0
     privileged: true
+    #network_mode: "host"
+
     networks:
-      - bomi-fama
+     - bomi-fama
     ports:
       - "8081:4242"
     entrypoint: ["python", "main_mechanism.py"]
