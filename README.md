@@ -15,3 +15,8 @@ Once you have `docker-compose` installed you will just have to run the compose f
 ```
 
 This will launch the dockerfiles
+
+# Unity Files
+
+In the directory `unity-docker-example` are stored the bare minimum files needed to execute the Unity3D WebGL client (i.e., the robotic arm controlled by the joints). The files have been generated starting from the project presented in the [kTonpa/3dof-robot-arm-using-unity3D](https://github.com/kTonpa/3dof-robot-arm-using-unity3D) repository, although the entire project is not stored on GitHub to lower the space requirements of this repository. However do not hesitate to open an issue (or contact me in any other way you deem more convoluted and therefore funnier).
+The app is launched using a simple nginx container (see forked repo).
