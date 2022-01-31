@@ -10,9 +10,9 @@ services:
     #network_mode: "host"
     networks:
       - bomi-fama
-    ports:
-      - "8042:4242"
-      - "8043:4243"
+    #ports:
+    #  - "8042:4242"
+    #  - "8043:4243"
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
@@ -37,8 +37,8 @@ services:
 
     networks:
      - bomi-fama
-    ports:
-      - "8142:4242"
+    #ports:
+    #  - "8142:4242"
     extra_hosts:
       - "host.docker.internal:host-gateway"
     entrypoint: ["python", "main_mechanism.py"]
@@ -51,13 +51,17 @@ services:
             - driver: nvidia
               capabilities: [gpu]
 
-  webgl:
+  bomi_webgl:
     container_name: unity-webgl
     image: unity-webgl
-    build: .
+    build: ./unity-docker-example
+    environment:
+      - BOMI_SERVER_NAME=bomi_server
     ports:
       - "8080:80"
-      - "8243:4243"
+    depends_on:
+      - bomi_server
+    #  - "8243:4243"
     #network_mode: "host"
     extra_hosts:
       - "host.docker.internal:host-gateway"
