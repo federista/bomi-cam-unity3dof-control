@@ -55,7 +55,7 @@ services:
     container_name: unity-webgl
     image: unity-webgl
     build: ./unity-docker-example
-    environment:
+    args:
       - BOMI_SERVER_NAME=bomi_server
     ports:
       - "8080:80"
