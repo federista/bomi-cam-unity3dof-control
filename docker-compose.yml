@@ -39,8 +39,6 @@ services:
      - bomi-fama
     #ports:
     #  - "8142:4242"
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
     entrypoint: ["python", "main_mechanism.py"]
     depends_on:
       - bomi_server
@@ -58,6 +56,7 @@ services:
       context: ./unity-docker-example
       args:
         - BOMI_SERVER_NAME=bomi_server
+        - BOMI_SERVER_PORT=4243
     ports:
       - "8080:80"
     depends_on:
@@ -68,6 +67,7 @@ services:
       - "host.docker.internal:host-gateway"
     networks:
      - bomi-fama
+    
 
 networks:
   bomi-fama: {}
