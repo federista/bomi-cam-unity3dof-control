@@ -1,6 +1,6 @@
 # bomi-cam-unity3dof-control
 
-![3dof-arm](https://raw.githubusercontent.com/hypothe/bomi-cam-unity3dof-control/diadic/.github/images/3dof_static.jpg)
+![3dof-arm](https://raw.githubusercontent.com/hypothe/bomi-cam-unity3dof-control/main/.github/images/3dof_static.jpg)
 
 > Meta-repository containing both the python scripts (used for 'target reaching', 'mouse control' and 'unity mechanism control') and the nodejs server used for interfacing the scripts with Unity3D.
 
