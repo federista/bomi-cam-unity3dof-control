@@ -10,7 +10,7 @@ services:
     networks:
       - bomi-fama
     ports:
-      - "8042:4242"
+      - "8080:4242"
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
