@@ -1,8 +1,21 @@
 # bomi-cam-unity3dof-control
 
+Meta-repository containing both the python scripts (used for 'target reaching', 'mouse control' and 'unity mechanism control') and the nodejs server used for interfacing the scripts with Unity3D.
+
+## Team Members
+
+_In alphabetic order:_
+
+| Name | email  | profile |
+| :--- | :---   | :--- |
+| Federico Danzi | s5066568@studenti.unige.it | [Etruria89](https://github.com/Etruria89)
+| Marco Gabriele Fedozzi | s5083365@studenti.unige.it | [hypothe](https://github.com/hypothe)
+| Amanzhol Raisov | s4889656@studenti.unige.it | [robotmiro1](https://github.com/robotmiro1)
+| Laura Triglia | s4494106@studenti.unige.it | [lauratriglia](https://github.com/lauratriglia)
+
 ![3dof-arm](https://raw.githubusercontent.com/hypothe/bomi-cam-unity3dof-control/main/.github/images/3dof_static.jpg)
 
-> Meta-repository containing both the python scripts (used for 'target reaching', 'mouse control' and 'unity mechanism control') and the nodejs server used for interfacing the scripts with Unity3D.
+
 
 The scripts presented in the two submodules are combined here (see the **docker-compose** section) to control a 3dof robotic arm in a Unity3D simulation by mapping relevant joint positions of the user - in the 2D image frame detected using the pc webcam - to the angular position of each of the robot joint (_direct kinematic position control_).
 
