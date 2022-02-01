@@ -6,7 +6,3 @@
 	path = bomi_fama_nodejs
 	url = https://github.com/hypothe/bomi_fama_nodejs.git
 	branch = main
-[submodule "unity-docker-example"]
-	path = unity-docker-example
-	url = git@github.com:hypothe/unity-docker-example.git
-	branch = socket.io-test
