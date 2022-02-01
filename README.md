@@ -1,5 +1,7 @@
 # biorob_group12_bomi
 
+![3dof-arm](https://raw.githubusercontent.com/hypothe/biorob_group12_bomi/diadic/.github/images/3dof_static.jpg)
+
 > Meta-repository containing both the python scripts (used for 'target reaching', 'mouse control' and 'unity mechanism control') and the nodejs server used for interfacing the scripts with Unity3D.
 
 The scripts presented in the two submodules are combined here (see the **docker-compose** section) to control a 3dof robotic arm in a Unity3D simulation by mapping relevant joint positions of the user - in the 2D image frame detected using the pc webcam - to the angular position of each of the robot joint (_direct kinematic position control_).
