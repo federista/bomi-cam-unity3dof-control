@@ -1,6 +1,6 @@
-# biorob_group12_bomi
+# bomi-cam-unity3dof-control
 
-![3dof-arm](https://raw.githubusercontent.com/hypothe/biorob_group12_bomi/diadic/.github/images/3dof_static.jpg)
+![3dof-arm](https://raw.githubusercontent.com/hypothe/bomi-cam-unity3dof-control/diadic/.github/images/3dof_static.jpg)
 
 > Meta-repository containing both the python scripts (used for 'target reaching', 'mouse control' and 'unity mechanism control') and the nodejs server used for interfacing the scripts with Unity3D.
 
@@ -14,7 +14,7 @@ You will need to install `docker-compose` if it's not present on your system alr
 Once you have `docker-compose` installed you will just have to run the compose file present in this repo with
 
 ```bash
-.../biorob_group12_bomi$ docker-compose up
+.../bomi-cam-unity3dof-control$ docker-compose up
 ```
 
 This will launch two containers, one for each of the two submodules in this repo.
