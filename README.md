@@ -93,3 +93,17 @@ You can find, at the bottom of the Python-Client GUI window that pops up, a text
 
 Yes, it is. The solution proposed to track the user's motion is, definitely not the best one possible. Some (quite a few) updates have been made to the one proposed in the source repository. However, the whole design needs to be remade from the ground up, as a more intuitive control might tracking the user's joints configuration rather than their screen-space position; aka, "my fingers are open/close" rather than "my fingers are up there, no matter if the hand is open or closed".
 But, unfortunately, that would require probably quite some time to be implemented in a robust enough way, and might not provide significantly better results for some of the human joints (the shoulders and the nose).
+
+# Possible Future Improvements
+
+## A better mapping
+
+As already mentioned, it's probably more interesting to track the joint configuration of the user, instead of the position of their body features in the image-space. Mediapipe does not do that natively and, while it's possible to retrieve those values from the image-space ones, it's definitely not a trivial task (although, since Mediapipe itself is using a skeletal model to yiel a more coherent representation, it might be possible to do so by digging into lower-level API).
+
+## A better learning phase
+
+Or, rather, a better dataset for the PCA/AE/VAE to work with. Right now all the joint values detected by Mediapipe are saved and used, but it's easy to notice with a visual inspection of the video-feed during calibration, that not all postures detected are correct when compared with the user's movements. Although Mediapipe already tries to keep a coherent representation of the human skeleton the amount in which that is applied here is insufficient. Again, might be solved with lower level API and a bit of thinkering (i.e., there is the `smooth_landmarks=True` option for the Holistic model, but that messed up the face features detection in our trials). In addition, some further filtering might be applied: particular notice can be put in the case of the adoption of the VAE mapping, as its gaussian nature (returning both _mu_ and _sigma_ for each detection) could allow to use a Kalman Filter.
+
+# A better robot control
+
+Right now the control implemented in the Unity3D simulation is a simple Direct Kinematic - Position Controlled, meaning that each joint's position is directly controlled by one of the output variables produced by the python script. This is, of course, a simple and limited approach. A more realistic implementation might instead adopt an **Impedance Control**, driving the arm's end effector forces given the user's motion.
