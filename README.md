@@ -22,6 +22,12 @@ The scripts presented in the two submodules are combined here (see the **docker-
 
 # Running using docker and docker compose
 
+First of all clone this repo together with its submodules
+
+```bash
+$ git clone https://github.com/hypothe/bomi-cam-unity3dof-control.git --recurse-submodules
+```
+
 You will need to install `docker-compose` if it's not present on your system already (see [install docker-compose](https://docs.docker.com/compose/install))
 
 Once you have `docker-compose` installed you will just have to run the compose file present in this repo with
