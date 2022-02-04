@@ -2,6 +2,8 @@
 
 Meta-repository containing both the python scripts (used for 'target reaching', 'mouse control' and 'unity mechanism control') and the nodejs server used for interfacing the scripts with Unity3D.
 
+**NOTE:** for an in-depth look at the the different possible installation and running procedures refer to the project [:book: Wiki](https://github.com/hypothe/bomi-cam-unity3dof-control/wiki)
+
 ## Team Members
 
 _In alphabetic order:_
