@@ -1,7 +1,7 @@
 [submodule "markerlessBoMI_FaMa"]
 	path = markerlessBoMI_FaMa
 	url = https://github.com/hypothe/markerlessBoMI_FaMa.git
-	branch = server-test
+	branch = main
 [submodule "bomi_fama_nodejs"]
 	path = bomi_fama_nodejs
 	url = https://github.com/hypothe/bomi_fama_nodejs.git
