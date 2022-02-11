@@ -36,12 +36,6 @@ services:
     entrypoint: ["python", "main_mechanism.py"]
     depends_on:
       - bomi_server
-    deploy:
-      resources:
-        reservations: 
-          devices:
-            - driver: nvidia
-              capabilities: [gpu]
 
 networks:
   bomi-fama: {}
